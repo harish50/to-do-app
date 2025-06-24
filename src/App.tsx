@@ -1,34 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Header from "./components/Header.tsx";
 import './App.css'
+import {useState} from "react";
+import TodoItem, {type Todo} from "./components/TodoItem.tsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [search, setSearch] = useState("");
+  const [todos, setTodos] = useState<Todo[]>([
+    {
+      title: "Lorem Ipsum ",
+      createdAt: new Date().toDateString(),
+      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      status: "Pending",
+      id: "some-id"
+    },
+    {
+      title: "Lorem Ipsum ",
+      createdAt: new Date().toDateString(),
+      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      status: "In Progress",
+      id: "some-id"
+    },
+    {
+      title: "Lorem Ipsum ",
+      createdAt: new Date().toDateString(),
+      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      status: "Completed",
+      id: "some-id"
+    }
+  ]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="max-w-md mx-auto pb-20">
+      <Header title={"TO-DO APP"}/>
+      <div className='p-3'>
+        <input
+          type="text"
+          placeholder="🔍 Search To-Do"
+          className="w-full border p-2 rounded mb-4"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        {todos.map((item) => (
+          <TodoItem todo={item} key={item.id} />
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
