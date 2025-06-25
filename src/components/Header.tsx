@@ -14,7 +14,7 @@ const Header = ({title, showBack}: HeaderProps) => {
     navigate("/")
   }
   return (
-    <div className="bg-blue-800 text-white px-5 py-4 text-lg font-bold flex gap-4">
+    <div className="bg-primary text-white px-5 py-4 text-lg font-bold flex gap-4">
       {showBack &&
         <button onClick={handleBack}>
           <FontAwesomeIcon size="lg" icon={faArrowLeft}/>

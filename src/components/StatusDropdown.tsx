@@ -14,7 +14,7 @@ const StatusDropdown = ({selected, onChange,}: StatusDropdownProps) => {
   return (
     <div className="relative">
       <button
-        className="w-full border p-2 rounded flex items-center justify-between"
+        className="w-full border border-gray-400 p-2 rounded flex items-center justify-between"
         onClick={() => setOpen(!open)}
       >
         <div className="flex items-center gap-2">
@@ -25,7 +25,7 @@ const StatusDropdown = ({selected, onChange,}: StatusDropdownProps) => {
       </button>
 
       {open && (
-        <div className="absolute w-full mt-1 bg-white shadow rounded z-10 border">
+        <div className="absolute w-full mt-1 bg-white shadow rounded z-10 border border-gray-400">
           {statusOptions.map((option) => (
             <div
               key={option.value}

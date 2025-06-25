@@ -45,12 +45,12 @@ const EditTask = () => {
       <div className="mt-4 space-y-4 p-5">
         <input
           type="text"
-          className="w-full border p-2 rounded"
+          className="w-full border border-gray-400 p-2 rounded"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <textarea
-          className="w-full border p-2 rounded"
+          className="w-full border border-gray-400 p-2 rounded"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
@@ -58,13 +58,13 @@ const EditTask = () => {
         <div className="flex justify-between pt-4">
           <button
             onClick={() => navigate("/")}
-            className="border border-blue-800 text-blue-800 px-7 py-2 rounded"
+            className="border border-primary text-primary px-7 py-2 rounded"
           >
             Cancel
           </button>
           <button
             onClick={handleUpdate}
-            className="bg-blue-800 text-white px-8 py-2 rounded"
+            className="bg-primary text-white px-8 py-2 rounded"
           >
             Update
           </button>
