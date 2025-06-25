@@ -39,7 +39,8 @@ const AddTask: React.FC = () => {
         />
         <textarea
           placeholder="Enter the description"
-          className="w-full border border-gray-400 p-2 rounded"
+          rows={3}
+          className="w-full border border-gray-400 p-2 rounded resize-none"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
