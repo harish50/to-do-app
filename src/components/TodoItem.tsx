@@ -1,4 +1,4 @@
-type TaskStatus = "In Progress" | "Pending" | "Completed";
+export type TaskStatus = "In Progress" | "Pending" | "Completed";
 
 export interface Todo {
   id: string;
