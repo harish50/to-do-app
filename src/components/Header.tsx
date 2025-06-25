@@ -16,7 +16,7 @@ const Header = ({title, showBack}: HeaderProps) => {
   return (
     <div className="bg-primary text-white px-5 py-4 text-lg font-bold flex gap-4">
       {showBack &&
-        <button onClick={handleBack}>
+        <button onClick={handleBack} className="cursor-pointer">
           <FontAwesomeIcon size="lg" icon={faArrowLeft}/>
         </button>
       }

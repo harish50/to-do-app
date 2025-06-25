@@ -19,7 +19,7 @@ const Section = ({title, status, defaultOpen = false, tasks}: SectionProps) => {
     <div className="mb-4">
       <button
         onClick={() => setExpanded((prev) => !prev)}
-        className="flex justify-between items-center w-full bg-gray-100 px-4 py-2 rounded text-left text-xs h-9"
+        className="flex justify-between items-center w-full bg-gray-100 px-4 py-2 rounded text-left text-xs h-9 cursor-pointer"
       >
         <span>
           {title} (<b>{filtered.length}</b>)

@@ -48,10 +48,10 @@ const TaskItem = ({task}: TotoItemProps) => {
           <div className="text-gray-400 mt-1">{formatDate(task.createdAt)}</div>
           <div
             className="flex gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200">
-            <button className="text-primary  text-xs" onClick={handleEdit}>
+            <button className="text-primary cursor-pointer text-xs" onClick={handleEdit}>
               <FontAwesomeIcon icon={faPen} className="w-4 h-4"/>
             </button>
-            <button className="text-red-600 text-xs" onClick={handleDelete}>
+            <button className="text-red-600 text-xs cursor-pointer" onClick={handleDelete}>
               <FontAwesomeIcon icon={faTrash} className="w-4 h-4"/>
             </button>
           </div>

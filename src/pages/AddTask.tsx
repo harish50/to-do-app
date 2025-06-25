@@ -47,13 +47,13 @@ const AddTask: React.FC = () => {
         <div className="flex justify-between pt-4">
           <button
             onClick={() => navigate("/")}
-            className="border border-primary text-primary px-7 py-2 rounded"
+            className="border border-primary text-primary px-7 py-2 rounded cursor-pointer"
           >
             Cancel
           </button>
           <button
             onClick={handleAdd}
-            className="bg-primary text-white px-10 py-2 rounded"
+            className="bg-primary text-white px-10 py-2 rounded cursor-pointer"
           >
             Add
           </button>

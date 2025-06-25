@@ -59,13 +59,13 @@ const EditTask = () => {
         <div className="flex justify-between pt-4">
           <button
             onClick={() => navigate("/")}
-            className="border border-primary text-primary px-7 py-2 rounded"
+            className="border border-primary text-primary px-7 py-2 rounded cursor-pointer"
           >
             Cancel
           </button>
           <button
             onClick={handleUpdate}
-            className="bg-primary text-white px-8 py-2 rounded"
+            className="bg-primary text-white px-8 py-2 rounded cursor-pointer"
           >
             Update
           </button>
