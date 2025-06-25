@@ -1,8 +1,8 @@
 import {useState} from "react";
-import TaskItem, {type Task} from "./TaskItem";
-import type {TaskStatus} from "../utils/todo";
+import TaskItem from "./TaskItem";
 import {faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {type Task, TaskStatus} from "../types/task.ts";
 
 interface SectionProps {
   title: string;

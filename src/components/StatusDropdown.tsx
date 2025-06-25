@@ -1,7 +1,8 @@
 import {useState} from "react";
-import {statusOptions, TaskStatus} from "../utils/todo.ts";
+import {statusOptions} from "../utils/todo.ts";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronDown, faChevronUp} from "@fortawesome/free-solid-svg-icons";
+import {TaskStatus} from "../types/task.ts";
 
 type StatusDropdownProps = {
   selected: TaskStatus;

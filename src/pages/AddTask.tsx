@@ -1,10 +1,9 @@
 import {useNavigate} from "react-router";
 import React, {useContext, useState} from "react";
-import {type Task} from "../components/TaskItem.tsx";
 import Header from "../components/Header.tsx";
 import {v4 as uuidv4} from "uuid";
 import TaskContext from "../TasksContext.ts";
-import {TaskStatus} from "../utils/todo.ts";
+import {type Task, TaskStatus} from "../types/task.ts";
 
 const AddTask: React.FC = () => {
   const navigate = useNavigate();
@@ -18,7 +17,7 @@ const AddTask: React.FC = () => {
       id: uuidv4(),
       title,
       description,
-      status: TaskStatus.Pending,
+      status: TaskStatus.InProgress,
       createdAt: new Date().toISOString(),
     };
     const updated = [newTask, ...tasks];

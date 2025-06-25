@@ -2,8 +2,8 @@ import {useNavigate, useParams} from "react-router";
 import {useContext, useEffect, useState} from "react";
 import TaskContext from "../TasksContext.ts";
 import Header from "../components/Header.tsx";
-import {TaskStatus} from "../utils/todo.ts";
 import StatusDropdown from "../components/StatusDropdown.tsx";
+import {TaskStatus} from "../types/task.ts";
 
 const EditTask = () => {
   const navigate = useNavigate();

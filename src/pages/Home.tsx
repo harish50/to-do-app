@@ -3,9 +3,8 @@ import {useNavigate} from "react-router";
 import TaskContext from "../TasksContext.ts";
 import Header from "../components/Header.tsx";
 import AddButton from "../components/AddButton.tsx";
-import {type Task} from "../components/TaskItem.tsx";
 import Section from "../components/Section.tsx";
-import {TaskStatus} from "../utils/todo.ts";
+import {type Task, TaskStatus} from "../types/task.ts";
 
 function Home() {
   const [search, setSearch] = useState("");

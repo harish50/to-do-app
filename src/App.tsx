@@ -4,8 +4,8 @@ import AddTask from "./pages/AddTask.tsx";
 import Home from "./pages/Home.tsx";
 import TaskContext from "./TasksContext.ts";
 import {useEffect, useState} from "react";
-import type {Task} from "./components/TaskItem.tsx";
 import EditTask from "./pages/EditTask.tsx";
+import type {Task} from "./types/task.ts";
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>(() => {

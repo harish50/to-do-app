@@ -1,8 +1,4 @@
-export enum TaskStatus {
-  Complete = "Completed",
-  InProgress = "In Progress",
-  Pending = "Pending"
-}
+import {TaskStatus} from "../types/task.ts";
 
 export const statusOptions: { value: TaskStatus; label: string; color: string }[] = [
   {value: TaskStatus.Pending, label: "Pending", color: "bg-gray-400"},

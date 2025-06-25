@@ -1,17 +1,10 @@
 import {useNavigate} from "react-router";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faPen, faTrash} from '@fortawesome/free-solid-svg-icons'
-import {formatDate, statusOptions, type TaskStatus} from "../utils/todo.ts";
+import {formatDate, statusOptions} from "../utils/todo.ts";
 import TaskContext from "../TasksContext.ts";
 import {useContext} from "react";
-
-export interface Task {
-  id: string;
-  title: string;
-  description: string;
-  createdAt: string;
-  status: TaskStatus
-}
+import {type Task} from "../types/task.ts";
 
 interface TotoItemProps {
   task: Task
