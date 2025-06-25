@@ -3,14 +3,16 @@ import {useNavigate} from "react-router";
 import TaskContext from "../TasksContext.ts";
 import Header from "../components/Header.tsx";
 import AddButton from "../components/AddButton.tsx";
-import TaskItem, {type Task} from "../components/TaskItem.tsx";
+import {type Task} from "../components/TaskItem.tsx";
+import Section from "../components/Section.tsx";
+import {TaskStatus} from "../utils/todo.ts";
 
 function Home() {
   const [search, setSearch] = useState("");
   const {tasks} = useContext(TaskContext)
   const navigate = useNavigate();
 
-  const filterTasks = tasks.filter(
+  const filteredTasks = tasks.filter(
     (task: Task) =>
       task.title.toLowerCase().includes(search) || task.description.toLowerCase().includes(search)
   );
@@ -24,25 +26,17 @@ function Home() {
       <div className="p-3">
         <input
           type="text"
+          name="search"
           placeholder="🔍 Search To-Do"
-          className="w-full border border-gray-400 p-2 rounded"
+          className="w-full border border-gray-400 p-2 rounded text-xs h-10"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
       <div className="flex-grow overflow-y-auto p-3 pb-24 bg-white">
-        {(
-          search ? filterTasks : tasks
-        ).map((item) => (
-          <TaskItem task={item} key={item.id}/>
-        ))}
-
-        {tasks.length === 0 && (
-          <div className="text-center text-gray-500 py-10">
-            <p className="text-xl mb-2">🎉 Nothing here!</p>
-            <p>Add a new task to get started.</p>
-          </div>
-        )}
+        <Section title="In Progress" status={TaskStatus.InProgress} tasks={filteredTasks} defaultOpen/>
+        <Section title="Pending" status={TaskStatus.Pending} tasks={filteredTasks}/>
+        <Section title="Completed" status={TaskStatus.Complete} tasks={filteredTasks}/>
       </div>
       <div className="absolute bottom-4 right-4">
         <AddButton onClick={handleAdd}/>

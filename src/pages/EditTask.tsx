@@ -45,12 +45,13 @@ const EditTask = () => {
       <div className="mt-4 space-y-4 p-5">
         <input
           type="text"
-          className="w-full border border-gray-400 p-2 rounded"
+          className="w-full border border-gray-400 p-2 rounded text-xs"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <textarea
-          className="w-full border border-gray-400 p-2 rounded"
+          rows={3}
+          className="w-full border border-gray-400 p-2 rounded text-xs resize-none"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />

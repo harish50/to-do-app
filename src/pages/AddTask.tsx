@@ -33,14 +33,14 @@ const AddTask: React.FC = () => {
         <input
           type="text"
           placeholder="Enter the title"
-          className="w-full border border-gray-400 p-2 rounded"
+          className="w-full border border-gray-400 p-2 rounded text-xs"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <textarea
           placeholder="Enter the description"
           rows={3}
-          className="w-full border border-gray-400 p-2 rounded resize-none"
+          className="w-full border border-gray-400 p-2 rounded resize-none text-xs"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
