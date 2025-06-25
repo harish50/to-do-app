@@ -1,7 +1,7 @@
 import {useNavigate} from "react-router";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faPen, faTrash} from '@fortawesome/free-solid-svg-icons'
-import {statusOptions, type TaskStatus} from "../utils/todo.ts";
+import {formatDate, statusOptions, type TaskStatus} from "../utils/todo.ts";
 import TaskContext from "../TasksContext.ts";
 import {useContext} from "react";
 
@@ -34,7 +34,7 @@ const TaskItem = ({task}: TotoItemProps) => {
   };
 
   return (
-    <div className="p-4 border-b group">
+    <div className="p-4 border-b border-gray-400 group">
       <div className="flex-col">
         <div className="flex justify-between gap-2">
           <div className="text-blue-800 text-sm font-bold">{task.title}</div>
@@ -45,7 +45,7 @@ const TaskItem = ({task}: TotoItemProps) => {
         </div>
         <p className="text-xs text-gray-600 whitespace-pre-line">{task.description}</p>
         <div className="flex justify-between gap-2 text-[10px]">
-          <div className="text-gray-400 mt-1">{task.createdAt}</div>
+          <div className="text-gray-400 mt-1">{formatDate(task.createdAt)}</div>
           <div
             className="flex gap-2 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200">
             <button className="text-blue-600  text-xs" onClick={handleEdit}>

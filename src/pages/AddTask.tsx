@@ -19,7 +19,7 @@ const AddTask: React.FC = () => {
       title,
       description,
       status: TaskStatus.Pending,
-      createdAt: new Date().toDateString(),
+      createdAt: new Date().toISOString(),
     };
     const updated = [newTask, ...tasks];
     setTasks(updated)
@@ -27,32 +27,32 @@ const AddTask: React.FC = () => {
   };
 
   return (
-    <div className="max-w-lvw mx-auto">
+    <div className="max-w-5xl mx-auto h-[100dvh] bg-white">
       <Header title={"Add Task"} showBack/>
-      <div className='p-2'>
+      <div className='p-5 space-y-4 mt-4'>
         <input
           type="text"
           placeholder="Enter the title"
-          className="w-full border border-gray-400 p-2 rounded mb-2"
+          className="w-full border border-gray-400 p-2 rounded"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <textarea
           placeholder="Enter the description"
-          className="w-full border border-gray-400 p-2 rounded mb-2"
+          className="w-full border border-gray-400 p-2 rounded"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
         <div className="flex justify-between pt-4">
           <button
             onClick={() => navigate("/")}
-            className="border border-blue-800 text-blue-800 px-4 py-2 rounded"
+            className="border border-blue-800 text-blue-800 px-7 py-2 rounded"
           >
             Cancel
           </button>
           <button
             onClick={handleAdd}
-            className="bg-blue-800 text-white px-6 py-2 rounded"
+            className="bg-blue-800 text-white px-10 py-2 rounded"
           >
             Add
           </button>

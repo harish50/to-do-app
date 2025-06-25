@@ -39,10 +39,10 @@ const EditTask = () => {
   };
 
   return (
-    <div className="max-w-lvw mx-auto">
+    <div className="max-w-5xl mx-auto h-[100dvh] bg-white">
       <Header showBack title={"Edit Task"} />
 
-      <div className="mt-6 space-y-4 p-2">
+      <div className="mt-4 space-y-4 p-5">
         <input
           type="text"
           className="w-full border p-2 rounded"
@@ -54,19 +54,17 @@ const EditTask = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-
         <StatusDropdown selected={status} onChange={setStatus} />
-
         <div className="flex justify-between pt-4">
           <button
             onClick={() => navigate("/")}
-            className="border border-blue-800 text-blue-800 px-4 py-2 rounded"
+            className="border border-blue-800 text-blue-800 px-7 py-2 rounded"
           >
             Cancel
           </button>
           <button
             onClick={handleUpdate}
-            className="bg-blue-800 text-white px-6 py-2 rounded"
+            className="bg-blue-800 text-white px-8 py-2 rounded"
           >
             Update
           </button>
