@@ -1,6 +1,6 @@
 import {useNavigate} from "react-router";
 import React, {useContext, useState} from "react";
-import type {Todo} from "../components/TodoItem.tsx";
+import {TaskStatus, type Todo} from "../components/TodoItem.tsx";
 import Header from "../components/Header.tsx";
 import {v4 as uuidv4} from "uuid";
 import TaskContext from "../TasksContext.ts";
@@ -17,7 +17,7 @@ const AddTodo: React.FC = () => {
       id: uuidv4(),
       title,
       description,
-      status: "Pending",
+      status: TaskStatus.Pending,
       createdAt: new Date().toDateString(),
     };
     const updated = [newTask, ...tasks];
@@ -42,20 +42,20 @@ const AddTodo: React.FC = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-      </div>
-      <div className="flex mt-6 justify-between">
-        <button
-          className=" bg-white text-blue-700 border-2 px-6 border-blue-700 py-2 rounded"
-          onClick={handleAdd}
-        >
-          Cancel
-        </button>
-        <button
-          className=" bg-blue-800 text-white px-6 rounded"
-          onClick={handleAdd}
-        >
-          Add Task
-        </button>
+        <div className="flex justify-between pt-4">
+          <button
+            onClick={() => navigate("/")}
+            className="border border-blue-800 text-blue-800 px-4 py-2 rounded"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={handleAdd}
+            className="bg-blue-800 text-white px-6 py-2 rounded"
+          >
+            Add
+          </button>
+        </div>
       </div>
     </div>
   )

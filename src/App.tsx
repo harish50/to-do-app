@@ -5,6 +5,7 @@ import Home from "./pages/Home.tsx";
 import TaskContext from "./TasksContext.ts";
 import {useState} from "react";
 import type {Todo} from "./components/TodoItem.tsx";
+import EditTask from "./pages/EditTask.tsx";
 
 function App() {
   const [tasks, setTasks] = useState<Todo[]>([]);
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route index element={<Home/>}/>
         <Route path="add-todo" element={<AddTodo/>}/>
+        <Route path="/edit/:id" element={<EditTask />} />
       </Routes>
     </TaskContext>
   )
