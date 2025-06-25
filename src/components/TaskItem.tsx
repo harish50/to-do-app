@@ -1,0 +1,63 @@
+import {useNavigate} from "react-router";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faPen, faTrash} from '@fortawesome/free-solid-svg-icons'
+import {statusOptions, type TaskStatus} from "../utils/todo.ts";
+import TaskContext from "../TasksContext.ts";
+import {useContext} from "react";
+
+export interface Task {
+  id: string;
+  title: string;
+  description: string;
+  createdAt: string;
+  status: TaskStatus
+}
+
+interface TotoItemProps {
+  task: Task
+}
+
+const TaskItem = ({task}: TotoItemProps) => {
+  const navigate = useNavigate();
+  const {setTasks} = useContext(TaskContext);
+
+  const statusColor = statusOptions.find((s) => s.value === task.status)?.color;
+
+  const handleEdit = () => {
+    navigate(`edit/${task.id}`)
+  }
+
+  const handleDelete = () => {
+    if (confirm("Are you sure you want to delete this task?")) {
+      setTasks((prev) => prev.filter((t) => t.id !== task.id));
+    }
+  };
+
+  return (
+    <div className="p-4 border-b group">
+      <div className="flex-col">
+        <div className="flex justify-between gap-2">
+          <div className="text-blue-800 text-sm font-bold">{task.title}</div>
+          <div className="text-xs text-gray-700 flex items-center gap-1 ">
+            <span className={"w-2.5 h-2.5 rounded-full inline-block " + statusColor}></span>
+            <span className="capitalize">{task.status}</span>
+          </div>
+        </div>
+        <div className="text-xs text-gray-600">{task.description}</div>
+        <div className="flex justify-between gap-2 text-[10px]">
+          <div className="text-gray-400 mt-1">{task.createdAt}</div>
+          <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            <button className="text-blue-600  text-xs" onClick={handleEdit}>
+              <FontAwesomeIcon icon={faPen} className="w-4 h-4"/>
+            </button>
+            <button className="text-red-500 text-xs" onClick={handleDelete}>
+              <FontAwesomeIcon icon={faTrash} className="w-4 h-4"/>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default TaskItem;

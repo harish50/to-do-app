@@ -1,12 +1,5 @@
 import {useState} from "react";
-import {TaskStatus} from "../components/TodoItem.tsx";
-
-
-export const statusOptions: { value: TaskStatus; label: string; color: string }[] = [
-  {value: TaskStatus.Pending, label: "Pending", color: "bg-gray-400"},
-  {value: TaskStatus.InProgress, label: "In Progress", color: "bg-yellow-400"},
-  {value: TaskStatus.Complete, label: "Completed", color: "bg-green-600"},
-];
+import {statusOptions, TaskStatus} from "../utils/todo.ts";
 
 type StatusDropdownProps = {
   selected: TaskStatus;

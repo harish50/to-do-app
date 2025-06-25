@@ -1,11 +1,12 @@
 import {useNavigate} from "react-router";
 import React, {useContext, useState} from "react";
-import {TaskStatus, type Todo} from "../components/TodoItem.tsx";
+import {type Task} from "../components/TaskItem.tsx";
 import Header from "../components/Header.tsx";
 import {v4 as uuidv4} from "uuid";
 import TaskContext from "../TasksContext.ts";
+import {TaskStatus} from "../utils/todo.ts";
 
-const AddTodo: React.FC = () => {
+const AddTask: React.FC = () => {
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -13,7 +14,7 @@ const AddTodo: React.FC = () => {
 
   const handleAdd = () => {
     if (!title.trim()) return;
-    const newTask: Todo = {
+    const newTask: Task = {
       id: uuidv4(),
       title,
       description,
@@ -61,4 +62,4 @@ const AddTodo: React.FC = () => {
   )
 };
 
-export default AddTodo;
+export default AddTask;

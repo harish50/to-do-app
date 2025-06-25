@@ -2,7 +2,7 @@ import {useNavigate, useParams} from "react-router";
 import {useContext, useEffect, useState} from "react";
 import TaskContext from "../TasksContext.ts";
 import Header from "../components/Header.tsx";
-import {TaskStatus} from "../components/TodoItem.tsx";
+import {TaskStatus} from "../utils/todo.ts";
 import StatusDropdown from "../components/StatusDropdown.tsx";
 
 const EditTask = () => {
@@ -28,13 +28,13 @@ const EditTask = () => {
   const handleUpdate = () => {
     if (!title.trim()) return;
 
-    const updated = tasks.map((task) =>
+    const updatedTasks = tasks.map((task) =>
       task.id === id
         ? {...task, title, description, status}
         : task
     );
 
-    setTasks(updated);
+    setTasks(updatedTasks);
     navigate("/");
   };
 

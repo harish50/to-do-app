@@ -1,6 +1,6 @@
 import Header from "../components/Header.tsx";
 import {useContext, useState} from "react";
-import TodoItem from "../components/TodoItem.tsx";
+import TaskItem from "../components/TaskItem.tsx";
 import AddButton from "../components/AddButton.tsx";
 import {useNavigate} from "react-router";
 import TaskContext from "../TasksContext.ts";
@@ -26,7 +26,7 @@ function Home() {
           onChange={(e) => setSearch(e.target.value)}
         />
         {tasks.map((item) => (
-          <TodoItem todo={item} key={item.id}/>
+          <TaskItem task={item} key={item.id}/>
         ))}
         {
           tasks.length === 0 &&

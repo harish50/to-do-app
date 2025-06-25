@@ -1,10 +1,10 @@
 import React, { createContext} from "react";
-import type {Todo} from "./components/TodoItem.tsx";
+import type {Task} from "src/components/TaskItem.tsx";
 
 
 type TaskContextType = {
-  tasks: Todo[];
-  setTasks: React.Dispatch<React.SetStateAction<Todo[]>>;
+  tasks: Task[];
+  setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
 }
 
 const TaskContext = createContext<TaskContextType>({tasks: [], setTasks: ()=>{}});

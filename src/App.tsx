@@ -1,20 +1,20 @@
 import './App.css'
 import {Route, Routes} from "react-router";
-import AddTodo from "./pages/AddTodo.tsx";
+import AddTask from "./pages/AddTask.tsx";
 import Home from "./pages/Home.tsx";
 import TaskContext from "./TasksContext.ts";
 import {useState} from "react";
-import type {Todo} from "./components/TodoItem.tsx";
+import type {Task} from "./components/TaskItem.tsx";
 import EditTask from "./pages/EditTask.tsx";
 
 function App() {
-  const [tasks, setTasks] = useState<Todo[]>([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
 
   return (
     <TaskContext value={{tasks, setTasks}}>
       <Routes>
         <Route index element={<Home/>}/>
-        <Route path="add-todo" element={<AddTodo/>}/>
+        <Route path="add-todo" element={<AddTask/>}/>
         <Route path="/edit/:id" element={<EditTask />} />
       </Routes>
     </TaskContext>

@@ -1,4 +1,6 @@
 import {useNavigate} from "react-router";
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 type HeaderProps = {
   title: string;
@@ -12,8 +14,12 @@ const Header = ({title, showBack}: HeaderProps) => {
     navigate("/")
   }
   return (
-    <div className="bg-blue-800 text-white px-4 py-3 text-lg font-bold">
-      {showBack && <button onClick={handleBack}>Back</button>}
+    <div className="bg-blue-800 text-white px-5 py-4 text-lg font-bold flex gap-4">
+      {showBack &&
+        <button onClick={handleBack}>
+          <FontAwesomeIcon size="lg" icon={faArrowLeft}/>
+        </button>
+      }
       <h2>{title}</h2>
     </div>
   )
