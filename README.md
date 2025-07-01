@@ -8,7 +8,7 @@ This project is build on `vite` with `react-ts` plugin
 
 2.Install the dependencies
 ```bashs
-npm install --legacy-peer-deps
+npm install
 ```
 
 3.Start the app

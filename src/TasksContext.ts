@@ -1,5 +1,5 @@
 import React, { createContext} from "react";
-import type {Task} from "src/components/TaskItem.tsx";
+import type {Task} from "./types/task.ts";
 
 
 type TaskContextType = {
